@@ -1,12 +1,13 @@
 import {test, expect} from '@playwright/test'
+import { ENV } from '../config/env'
 
 
 // only, skip, fixme, fail, slow
 
-test('Handling Click, Double Click, Hover, Tooltip, Static Dropdown @smoke', async({page})=> {
+test.only('Handling Click, Double Click, Hover, Tooltip, Static Dropdown @smoke', async({page})=> {
 
     // test.slow()
-
+  console.log('Base URL: ', ENV.baseUrl)
     test.setTimeout(240000)
 
     await page.goto('https://playwright-mastery-academy-app.vercel.app/practice/sandbox-basic', {timeout: 120000})
